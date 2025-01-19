@@ -1,0 +1,16 @@
+{
+  "name": "infiniti-stream",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.49.1",
+    "playwright": "^1.49.1"
+  }
+}
