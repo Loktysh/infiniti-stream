@@ -1,3 +1,7 @@
+## Disclaimer
+
+All URLs, usernames, passwords, email addresses, page addresses, and their possible transitions provided in this document are for illustrative purposes only and have been fabricated without verification. These details are intended solely to align with the test cases and should not be used as real data. Any resemblance to actual websites, accounts, or data is purely coincidental. Please note that this data may not work in a real environment and is created schematically for understanding.
+
 ### Test Plan
 
 #### Test Cases for AB Tasty Login Page
@@ -24,15 +28,13 @@
 **Description:**  
 Verify that a user can log in with a valid email and password.
 
-**Steps:**
-1. Open the login page.
-2. Enter a valid email address.
-3. Enter a valid password.
-4. Click the "Login" button.
-
-**Expected Result:**
-- User is redirected to the Dashboard.
-- Dashboard title is displayed as "Dashboard - AB Tasty".
+**Acceptance Criteria:**
+1. The user enters a valid email address.
+2. The user enters a valid password.
+3. The user clicks the "Login" button.
+4. The system redirects the user to the Dashboard.
+5. The Dashboard title is displayed as "Dashboard - AB Tasty".
+6. No error messages are displayed.
 
 **Data Set:**
 - Valid Email: `valid.email@abtasty.com`
@@ -45,14 +47,12 @@ Verify that a user can log in with a valid email and password.
 **Description:**  
 Verify that an error message is displayed when an invalid email is entered.
 
-**Steps:**
-1. Open the login page.
-2. Enter an invalid email address.
-3. Enter a valid password.
-4. Click the "Login" button.
-
-**Expected Result:**
-- Error message "Invalid email/password" is displayed.
+**Acceptance Criteria:**
+1. The user enters an invalid email address.
+2. The user enters a valid password.
+3. The user clicks the "Login" button.
+4. The system displays an error message "Invalid email/password".
+5. The user remains on the login page.
 
 **Data Set:**
 - Invalid Email: `invalid.email@abtasty.com`
@@ -65,14 +65,12 @@ Verify that an error message is displayed when an invalid email is entered.
 **Description:**  
 Verify that an error message is displayed when an invalid password is entered.
 
-**Steps:**
-1. Open the login page.
-2. Enter a valid email address.
-3. Enter an invalid password.
-4. Click the "Login" button.
-
-**Expected Result:**
-- Error message "Invalid email/password" is displayed.
+**Acceptance Criteria:**
+1. The user enters a valid email address.
+2. The user enters an invalid password.
+3. The user clicks the "Login" button.
+4. The system displays an error message "Invalid email/password".
+5. The user remains on the login page.
 
 **Data Set:**
 - Valid Email: `valid.email@abtasty.com`
@@ -85,13 +83,11 @@ Verify that an error message is displayed when an invalid password is entered.
 **Description:**  
 Verify that a user is redirected to the SSO login page when an SSO email is entered.
 
-**Steps:**
-1. Open the login page.
-2. Enter an SSO email address.
-3. Click the "Login" button.
-
-**Expected Result:**
-- User is redirected to the SSO login page.
+**Acceptance Criteria:**
+1. The user enters an SSO email address.
+2. The user clicks the "Login" button.
+3. The system redirects the user to the SSO login page.
+4. The SSO login page is displayed with the appropriate branding and fields.
 
 **Data Set:**
 - SSO Email: `sso.email@abtasty.com`
@@ -103,15 +99,13 @@ Verify that a user is redirected to the SSO login page when an SSO email is ente
 **Description:**  
 Verify that the CAPTCHA is triggered after 3 consecutive failed login attempts.
 
-**Steps:**
-1. Open the login page.
-2. Enter a valid email address.
-3. Enter an invalid password.
-4. Click the "Login" button.
-5. Repeat steps 2-4 two more times.
-
-**Expected Result:**
-- CAPTCHA is triggered after the third failed attempt.
+**Acceptance Criteria:**
+1. The user enters a valid email address.
+2. The user enters an invalid password.
+3. The user clicks the "Login" button.
+4. Steps 1-3 are repeated two more times.
+5. After the third failed attempt, the CAPTCHA is displayed.
+6. The user remains on the login page.
 
 **Data Set:**
 - Valid Email: `valid.email@abtasty.com`
@@ -124,17 +118,17 @@ Verify that the CAPTCHA is triggered after 3 consecutive failed login attempts.
 **Description:**  
 Verify that the user can log in after solving the CAPTCHA correctly.
 
-**Steps:**
-1. Open the login page.
-2. Enter a valid email address.
-3. Enter an invalid password.
-4. Click the "Login" button.
-5. Repeat steps 2-4 two more times to trigger CAPTCHA.
-6. Solve the CAPTCHA correctly.
-7. Click the "Login" button again.
-
-**Expected Result:**
-- User is prompted to enter the password again.
+**Acceptance Criteria:**
+1. The user enters a valid email address.
+2. The user enters an invalid password.
+3. The user clicks the "Login" button.
+4. Steps 1-3 are repeated two more times to trigger CAPTCHA.
+5. The user solves the CAPTCHA correctly.
+6. The user clicks the "Login" button again.
+7. The system prompts the user to enter the password again.
+8. The user enters the correct password.
+9. The system redirects the user to the Dashboard.
+10. The Dashboard title is displayed as "Dashboard - AB Tasty".
 
 **Data Set:**
 - Valid Email: `valid.email@abtasty.com`
@@ -148,17 +142,15 @@ Verify that the user can log in after solving the CAPTCHA correctly.
 **Description:**  
 Verify that an error message is displayed when the CAPTCHA is solved incorrectly.
 
-**Steps:**
-1. Open the login page.
-2. Enter a valid email address.
-3. Enter an invalid password.
-4. Click the "Login" button.
-5. Repeat steps 2-4 two more times to trigger CAPTCHA.
-6. Solve the CAPTCHA incorrectly.
-7. Click the "Login" button again.
-
-**Expected Result:**
-- Error message "CAPTCHA verification failed" is displayed.
+**Acceptance Criteria:**
+1. The user enters a valid email address.
+2. The user enters an invalid password.
+3. The user clicks the "Login" button.
+4. Steps 1-3 are repeated two more times to trigger CAPTCHA.
+5. The user solves the CAPTCHA incorrectly.
+6. The user clicks the "Login" button again.
+7. The system displays an error message "CAPTCHA verification failed".
+8. The user remains on the login page.
 
 **Data Set:**
 - Valid Email: `valid.email@abtasty.com`
@@ -172,14 +164,12 @@ Verify that an error message is displayed when the CAPTCHA is solved incorrectly
 **Description:**  
 Verify that an MFA code is required for users with @abtasty email addresses.
 
-**Steps:**
-1. Open the login page.
-2. Enter an @abtasty email address.
-3. Enter a valid password.
-4. Click the "Login" button.
-
-**Expected Result:**
-- MFA code input field is displayed.
+**Acceptance Criteria:**
+1. The user enters an @abtasty email address.
+2. The user enters a valid password.
+3. The user clicks the "Login" button.
+4. The system prompts the user to enter an MFA code.
+5. The MFA code input field is displayed.
 
 **Data Set:**
 - @abtasty Email: `mfa.email@abtasty.com`
@@ -192,16 +182,15 @@ Verify that an MFA code is required for users with @abtasty email addresses.
 **Description:**  
 Verify that an error message is displayed when an incorrect MFA code is entered.
 
-**Steps:**
-1. Open the login page.
-2. Enter an @abtasty email address.
-3. Enter a valid password.
-4. Click the "Login" button.
-5. Enter an incorrect MFA code.
-6. Click the "Login" button again.
-
-**Expected Result:**
-- Error message "Incorrect MFA code" is displayed.
+**Acceptance Criteria:**
+1. The user enters an @abtasty email address.
+2. The user enters a valid password.
+3. The user clicks the "Login" button.
+4. The system prompts the user to enter an MFA code.
+5. The user enters an incorrect MFA code.
+6. The user clicks the "Login" button again.
+7. The system displays an error message "Incorrect MFA code".
+8. The user remains on the MFA input page.
 
 **Data Set:**
 - @abtasty Email: `mfa.email@abtasty.com`
@@ -215,17 +204,17 @@ Verify that an error message is displayed when an incorrect MFA code is entered.
 **Description:**  
 Verify that the device is saved for MFA when the "Save this device" option is checked.
 
-**Steps:**
-1. Open the login page.
-2. Enter an @abtasty email address.
-3. Enter a valid password.
-4. Click the "Login" button.
-5. Enter a valid MFA code.
-6. Check the "Save this device" option.
-7. Click the "Login" button again.
-
-**Expected Result:**
-- User is logged in successfully and not prompted for MFA on subsequent logins from the same device.
+**Acceptance Criteria:**
+1. The user enters an @abtasty email address.
+2. The user enters a valid password.
+3. The user clicks the "Login" button.
+4. The system prompts the user to enter an MFA code.
+5. The user enters a valid MFA code.
+6. The user checks the "Save this device" option.
+7. The user clicks the "Login" button again.
+8. The system redirects the user to the Dashboard.
+9. The Dashboard title is displayed as "Dashboard - AB Tasty".
+10. On subsequent logins from the same device, the user is not prompted for MFA.
 
 **Data Set:**
 - @abtasty Email: `mfa.email@abtasty.com`
@@ -239,12 +228,11 @@ Verify that the device is saved for MFA when the "Save this device" option is ch
 **Description:**  
 Verify that the login page is responsive and adapts to different screen sizes.
 
-**Steps:**
-1. Open the login page.
-2. Resize the browser window to below 1024px.
-
-**Expected Result:**
-- Login form takes up the full screen.
+**Acceptance Criteria:**
+1. The user opens the login page.
+2. The user resizes the browser window to below 1024px.
+3. The login form takes up the full screen.
+4. All elements are properly aligned and visible on the screen.
 
 **Data Set:**
 - N/A
@@ -256,12 +244,14 @@ Verify that the login page is responsive and adapts to different screen sizes.
 **Description:**  
 Verify that the login page is properly translated into different languages.
 
-**Steps:**
-1. Open the login page.
-2. Change the language to French, Spanish, or German.
-
-**Expected Result:**
-- All text is correctly translated into the selected language.
+**Acceptance Criteria:**
+1. The user opens the login page.
+2. The user changes the language to French.
+3. All text on the login page is correctly translated into French.
+4. The user changes the language to Spanish.
+5. All text on the login page is correctly translated into Spanish.
+6. The user changes the language to German.
+7. All text on the login page is correctly translated into German.
 
 **Data Set:**
 - N/A
